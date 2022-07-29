@@ -2,8 +2,8 @@
 
 ## About me
 
-My name is Anamaria Joo. I have started to take an interest in the software testing area, reason why I have attended a manual testing course. 
-My goal is to develop testing knowledge and technical skills. On this site I would like to share my all gained experience from personal studies.
+My name is Anamaria Joo. I have started to take an interest in the software testing area, reason why I have attended a manual testing course.   
+My goal is to develop testing knowledge and technical skills. On this site I would like to share my all gained experience from personal studies and researches.
 
 ## Skills
 You can find examples of the described skills in the Examples of my work section.
@@ -38,7 +38,8 @@ You can find examples of the described skills in the Examples of my work section
 - MySQL Workbench
 
 ## Examples of my work
-Final project for ITF Manual Testing Course
+### Final project for ITF Manual Testing Course
+
 The final project consisted of choosing a module from an application and start the testing process based on business specifications, from Test Planning until Test Completion.
 
 The test plan, test cases, bugs, test results for the final project can be found here: [Final Project](https://github.com/AnamariaJoo/Manual_testing_portofolio/tree/main/Final%20Project)
