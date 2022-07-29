@@ -1,0 +1,1334 @@
+{
+	"info": {
+		"_postman_id": "c5e201cd-234d-41f5-9b97-12b38c3e0215",
+		"name": "orangeHRMrestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_id\":\"AnamariaJ\", \r\n    \"client_secret\":\"AnamariaJoo\", \r\n    \"grant_type\":\"client_credentials\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/index.php/oauth/issueToken",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"index.php",
+						"oauth",
+						"issueToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMemployeeSearch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify that the response has the firstName field present\"), () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.include(\"firstName\");\r",
+							"};\r",
+							"pm.test(\"Verify if the response it's an object\"), () => \r",
+							"{\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an(\"object\");\r",
+							"\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/search",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMgetEmployee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check if the employee with id 3 is Peter Mac Anderson\"), () => \r",
+							"{\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"name\", \"Peter Mac Anderson\");\r",
+							"\r",
+							"};\r",
+							"pm.test(\"Information employee with id 3\"), () =>\r",
+							"{\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log(\"Information employee id 3\", response[0].id)\r",
+							"\r",
+							"};"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{OrangeHRM}}/api/v1/employee/3",
+					"protocol": "https",
+					"host": [
+						"{{OrangeHRM}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMsaveEmployee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that lastName is mandatory field\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Joo\", \r\n    \"middleName\":null,\r\n    \"lastName\":null, \r\n    \"code\":\"66\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/66",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMemployeeContact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Verify the response has the workTelephone field present\"), () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.include(\"workTelephone\");\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/contact-detail",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"contact-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMupdateEmployeeContactDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that Mobile field accepts only numbers\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3\",\r\n    \"addressStreet1\": \"421 E\",\r\n    \"addressStreet2\": \"DRACHMAN TUCSO\",\r\n    \"city\": \"Oradea\",\r\n    \"state\": \"\",\r\n    \"zip\": \"85705\",\r\n    \"country\": \"ROMANIA\",\r\n    \"homeTelephone\": \"101-222-5733\",\r\n    \"mobile\": \"test\",\r\n    \"workTelephone\": \"212-876-0987\",\r\n    \"workEmail\": \"peter@osohrm.com\",\r\n    \"otherEmail\": \"peter123@osohrm.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/contact-detail",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"contact-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMemployeeDependents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify if the response it's an object\"), () => \r",
+							"{\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an(\"object\");\r",
+							"};\r",
+							"pm.test(\"Verify if the response contains the date of birth of the dependent\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"dob\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/dependent",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"dependent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMsaveEmployeeDependent",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that a dependent can be added\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"name\":\"Test Ioana\", \r\n    \"relationship\":\"Sister\",\r\n    \"dob\":\"1990-12-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/dependent",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"dependent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMupdateEmployeeDependents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that name of dependent can be edited\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"name\":\"Test Ioana2\", \r\n    \"relationship\":\"Sister\",\r\n    \"dob\":\"1990-12-01\",\r\n    \"sequenceNumber\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/dependent",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"dependent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMdeleteEmployeeDependents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that a Dependent can be deleted\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\",\r\n    \"sequenceNumber\":\"2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/dependent",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"dependent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMgetCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check the name of the first customer\", function () {\r",
+							"    let jsonData = pm.response.json()\r",
+							"   arrayOfObject = jsonData.data[0].name;\r",
+							"   console.log(arrayOfObject)\r",
+							"   pm.expect(arrayOfObject).to.eql(\"ACME Ltd\")\r",
+							"});  \r",
+							"    pm.test(\"Verify if the response contains Description field\"), () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.include(\"description\");\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/customer",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMdeleteCustomer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that Customer can not be deleted\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\":\"7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/customer",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMgetProjects",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check the projectId of the first record\", () => {\r",
+							"   let jsonData = pm.response.json()\r",
+							"   arrayOfObject = jsonData.data[0].projectId;\r",
+							"   console.log(arrayOfObject)\r",
+							"   pm.expect(arrayOfObject).to.eql(\"1\")\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/project?projectId=100",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"project"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMdeleteProject",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that Project ID is required\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"projectId\":\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/project",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMterminateEmployment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if another type of date format is accepted\", function () {\r",
+							"    pm.response.to.have.status(202);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"55\", \r\n    \"date\":\"6/30/2022\", \r\n    \"reason\":\"leave\",\r\n    \"note\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/55/action/terminate",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"55",
+						"action",
+						"terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMworkExperience",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the response contains Company field \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"company\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the company name is OrangeHRM\", () => {\r",
+							"    let jsonData = pm.response.json()\r",
+							"   arrayOfObject = jsonData.data[0].company;\r",
+							"   console.log(arrayOfObject)\r",
+							"  pm.expect(arrayOfObject).to.eql(\"OrangeHRM\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{OrangeHRM}}/api/v1/employee/3/work-experience",
+					"protocol": "https",
+					"host": [
+						"{{OrangeHRM}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"work-experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMsaveEmployeeWorkExperience",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that a work experience can be added\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the response it's an object\"), () => \r",
+							"{\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an(\"object\");\r",
+							"\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"company\":\"OrangeHRM\", \r\n    \"title\":\"Administrator\",\r\n    \"fromDate\":\"2012-12-01\",\r\n    \"toDate\":\"2020-12-01\",\r\n    \"comment\":\"Other\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/work-experience",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"work-experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMupdateEmployeeWorkExperience",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that a work experience can be edited\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify that the response has the seqID field present\"), () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.include(\"seqId\");\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"seqId\":\"1\", \r\n    \"company\":\"OrangeHRM\",\r\n    \"title\":\"Engineer\",\r\n    \"fromDate\":\"2012-12-12\",\r\n    \"toDate\":\"2020-12-20\",\r\n    \"comment\":\"no\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/work-experience",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"work-experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMdeleteEmployeeWorkExperience",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that seqId field is mandatory\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"seqId\":\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/work-experience",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"work-experience"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMgetSupervisor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that the Supervisor is John Smith\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify that the type of reportingMethod is Direct\"), () => \r",
+							"{\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"reportingMethod\", \"Direct\");\r",
+							"\r",
+							"};\r",
+							"  tests[\"Verify that the response time is acceptable\"] = _.inRange(responseTime, 100, 501);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{OrangeHRM}}/api/v1/employee/3/supervisor",
+					"protocol": "https",
+					"host": [
+						"{{OrangeHRM}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"supervisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMupdateSupervisorDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that reportinghMethod field can be edited\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"supervisorId\":\"4\", \r\n    \"reportingMethod\":\"Indirect\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/supervisor",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"supervisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMdeleteSupervisorDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that a Supervisor can be deleted\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response : Successfully Deleted \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"succes\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"3\", \r\n    \"supervisorId\":\"4\", \r\n    \"reportingMethod\":\"Indirect\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/3/supervisor",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"supervisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMsaveSupervisor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that a Supervisor can be assigned to an employee\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3\",\r\n    \"supervisorId\": \"4\",\r\n    \"reportingMethod\": \"Direct\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{OrangeHRM}}/api/v1/employee/3/supervisor",
+					"protocol": "https",
+					"host": [
+						"{{OrangeHRM}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3",
+						"supervisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMemployeeDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify that the reponse contains FirstName, LastName, employeeID and Gender fields\",() => {\r",
+							"  pm.expect(pm.response.text()).to.include(\"firstName\");\r",
+							"  pm.expect(pm.response.text()).to.include(\"lastName\");\r",
+							"  pm.expect(pm.response.text()).to.include(\"employeeId\");\r",
+							"  pm.expect(pm.response.text()).to.include(\"gender\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{OrangeHRM}}/api/v1/employee/2",
+					"protocol": "https",
+					"host": [
+						"{{OrangeHRM}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "orangeHRMupdateEmployeeDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that employee details can be edited\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response : Succesfully Updated\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"succes\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2\",\r\n    \"firstName\": \"FooBar\",\r\n    \"middleName\": \"Abc\",\r\n    \"lastName\": \"Test\",\r\n    \"code\": \"0293\",\r\n    \"dob\": null,\r\n    \"licenseNumber\": \"\",\r\n    \"licenseNumberExpDate\": null,\r\n    \"maritalStatus\": \"\",\r\n    \"gender\": null,\r\n    \"otherId\": \"\",\r\n    \"nationality\": \"Romanian\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opensource-demo.orangehrmlive.com/api/v1/employee/2",
+					"protocol": "https",
+					"host": [
+						"opensource-demo",
+						"orangehrmlive",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
