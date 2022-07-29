@@ -14,7 +14,7 @@ JIRA, Zephyr Squad, Postman, MySQL Workbench.
 # Functional specifications
 The following Stories have been created in JIRA and they describe the functional specifications of the PIM module, for which the final project was performed :
 
-[PIM_module_stories.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_stories.pdf)
+[PIM_module_stories.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_stories.pdf...)
 
 # 1 Testing section
 ## 1.1 Test Planning
