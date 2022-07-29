@@ -12,10 +12,8 @@ Tools used:
 JIRA, Zephyr Squad, Postman, MySQL Workbench.
 
 # Functional specifications
-The following Stories have been created in JIRA and they describe the functional specifications of the PIM module, for which the final project was performed.
+The following Stories have been created in JIRA and they describe the functional specifications of the PIM module, for which the final project was performed :
 
-
-![stories.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/files/9167246/stories.pdf)
 
 
 # 1 Testing section
@@ -26,9 +24,9 @@ The plan identifies the items to be tested, the features to be tested, the types
 
 ### 1.1.1 Roles assigned to the project and persons allocated
 
-- Project manager - Georgiana Malan
-- Product owner - Sebastian Duma
-- Software developer - Maria Sabau
+- Project manager - Georgiana Popescu
+- Product owner - Sebastian Dinescu
+- Software developer - Maria Stan
 - QA Engineer - Anamaria Joo
 
 ### 1.1.2 Entry criteria defined
@@ -45,7 +43,7 @@ The plan identifies the items to be tested, the features to be tested, the types
 - The number of unresolved bugs is insignificant or they have low priority
 - All resolved bugs have been re-tested and approved
 - Deadline was reached
-- Sanity testing must be performed on the PIM Module
+- Regression testing must be performed on the PIM Module
 
 ### 1.1.4 Test scope
 **Tests in scope:** All the feature of PIM module which were defined in software requirement specifications need to be tested: functional testing, GUI testing and API testing. 
@@ -69,7 +67,6 @@ The following status report was generated on 1st of July 2022:
 The testing process will be executed based on the above requirements for the PIM module. The following test conditions were found:
 
 - Verify that one or all optional fields can be added/removed
-- Verify that the checkbox is working correctly
 - Enter data for all available fields and check that a custom field is added
 - Enter data only for mandatory fields and check that a custom field is added
 - Verify all validation constraints for the fields
@@ -81,7 +78,7 @@ The testing process will be executed based on the above requirements for the PIM
 - Verify that a termination reason can added/deleted or edited
 - Ensure that an asterisk is displayed next to the mandatory fields
 - Verify that user can Copy and Paste text into the textboxes
-- Verify that the radio buttons and drop-down lists are working correctly
+- Verify that the checkboxes, radio buttons and drop-down lists are working correctly
 - Verify that the dates are in the correct format and ensure that an expiration date earlier than an issue date cannot be selected
 
 ### 1.4 Test Design
@@ -93,21 +90,46 @@ equivalence partitioning, boundary value analysis and use case testing.
 ![test cases](https://user-images.githubusercontent.com/109798595/181040122-2f7255ce-5c37-4020-afda-870c46c2a7d6.jpg)
 
 
-
 The test cases with steps can be viewed here: test_cases.pdf
+
+For the PIM Module API, the following checklist was generated: ????
 
 ### 1.5 Test Implementation
 The following elements are needed to be ready before the test execution phase begins:
 
-enter here what needs to be ready for the test execution to begin
+- Testing environment is up and running: https://opensource-demo.orangehrmlive.com/
+- Access to the testing environment is given: Username : Admin | Password : admin123
+- Cycle summary was created
+- Test cases were added to the cycle summary
+- Postman collection with the PIM Module API methods was created
+- Authorization token was created for accessing the API
+
 ### 1.6 Test Execution
-Test cases are executed on the created test Cycle summary: cycle_summary_execution.pdf
-Bugs have been created based on the failed tests. The complete bug reports can be found here: created_bugs.pdf
-enter here bug titles
+- Test cases are executed on the created test Cycle summary: cycle_summary_execution.pdf
+- Bugs have been created based on the failed tests, and following exploratory testing. The complete bug reports can be found here: created_bugs.pdf
+
+- Values separated by another characters than commas
+- Show US Tax Exemptions menu was not added
+- Accepted as photograph another file extension than jpg, png, gif
+- Missing asterisk next to required field
+- Missing Add/Delete/Edit buttons
+- Missing specification for supported file type
+- Inactive ‘Performance’ tab
+
+- API tests are executed based on the checklist ????. The collection used can be found here: 
+
+- Regression testing is needed after the bugs are fixed.
+
 ### 1.7 Test Completion
-Exit criteria was evaluated and passed
-The traceability matrix was generated and can be found here: Traceability_matrix.csv
-Test execution chart was generated, the final report shows.... -> describe the final report
--> enter here test execution report/chart
+- Exit criteria was evaluated and passed.
+- The traceability matrix was generated and can be found here: Traceability_matrix.csv
+- Test execution chart was generated, the final report shows that a number of 3 tests have failed of a total of 30 tests.
+- A number of 30 test cases were planned for execution and all of them were executed.
+- A number of 7 bugs were found (including the ones found following exploratory testing), from which the priority is : 2 high, 2 medium and 3 low.
+
+![PIM_Module_Test execution chart](https://user-images.githubusercontent.com/109798595/181763111-5d956d65-168d-43a5-9ee2-71959a58e0af.jpg)
 
 # 2 SQL section
+
+Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications. Performed different queries inside the sql file :
+
