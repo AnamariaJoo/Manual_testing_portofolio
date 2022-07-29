@@ -130,6 +130,6 @@ The following elements are needed to be ready before the test execution phase be
 
 # 2 SQL section
 
-Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications. 
+Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications.   
 Performed different queries inside the sql file : [OrangeHRM PIM Module.sql](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/OrangeHRM%20PIM%20Module.sql)
 
