@@ -6,7 +6,7 @@ Application under test: https://opensource-demo.orangehrmlive.com/
 
 API Documentation: https://orangehrm.github.io/orangehrm-api-doc/
 
-The final project will be split into 2 sections: Testing section and SQL section.
+The final project is splitted into 2 sections: Testing section and SQL section.
 
 Tools used:
 JIRA, Zephyr Squad, Postman, MySQL Workbench.
@@ -107,13 +107,13 @@ The following elements are needed to be ready before the test execution phase be
 - Test cases are executed on the created test Cycle summary: [PIM_Module_CycleSummary_Execution.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_CycleSummary_Execution.xlsx)
 - Bugs have been created based on the failed tests, and following exploratory testing. The complete bug reports can be found here: [PIM_Module_bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_bugs.pdf)
 
-- Values separated by another characters than commas
-- Show US Tax Exemptions menu was not added
-- Accepted as photograph another file extension than jpg., png., gif.
-- Missing asterisk next to required field
-- Missing Add/Delete/Edit buttons
-- Missing specification for supported file type
-- Inactive ‘Performance’ tab
+  - Values separated by another characters than commas
+  - Show US Tax Exemptions menu was not added
+  - Accepted as photograph another file extension than jpg., png., gif.
+  - Missing asterisk next to required field
+  - Missing Add/Delete/Edit buttons
+  - Missing specification for supported file type
+  - Inactive ‘Performance’ tab
 
 - API tests are executed based on the checklist ????. The collection used can be found here: [Collection of requests created for PIM Module API](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/orangeHRMrestAPI.postman_collection.json)
 
@@ -121,7 +121,7 @@ The following elements are needed to be ready before the test execution phase be
 
 ### 1.7 Test Completion
 - Exit criteria was evaluated and passed.
-- The traceability matrix was generated and can be found here: Traceability_matrix.csv
+- The traceability matrix was generated and can be found here: [Traceability_Matrix.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/Traceability_Matrix.xlsx)
 - Test execution chart was generated, the final report shows that a number of 3 tests have failed of a total of 30 tests.
 - A number of 30 test cases were planned for execution and all of them were executed.
 - A number of 7 bugs were found (including the ones found following exploratory testing), from which the priority is : 2 high, 2 medium and 3 low.
@@ -130,5 +130,5 @@ The following elements are needed to be ready before the test execution phase be
 
 # 2 SQL section
 
-Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications. Performed different queries inside the sql file : [OrangeHRM PIM Module.sql]()
+Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications. Performed different queries inside the sql file : [OrangeHRM PIM Module.sql](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/OrangeHRM%20PIM%20Module.sql)
 
