@@ -89,7 +89,7 @@ equivalence partitioning, boundary value analysis and use case testing.
 
 ![test cases](https://user-images.githubusercontent.com/109798595/181775988-33c44813-c66f-4429-9780-83de6e761dc0.jpg)
 
-The test cases with steps can be viewed here: [PIM_module_test_cases.ods](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_test_cases.ods)
+The test cases with steps can be viewed here: [PIM_module_test_cases.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_test_cases.xlsx)
 
 For the PIM Module API, the following checklist was generated: ????
 
