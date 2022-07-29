@@ -48,7 +48,7 @@ The plan identifies the items to be tested, the features to be tested, the types
 - Sanity testing must be performed on the PIM Module
 
 ### 1.1.4 Test scope
-**Tests in scope:** All the feature of PIM module which were defined in software requirement specifications need to be tested: functional testing, GUI testing and API testing.  
+**Tests in scope:** All the feature of PIM module which were defined in software requirement specifications need to be tested: functional testing, GUI testing and API testing. 
 **Tests not in scope:** integration testing of the PIM module with other modules, stress testing, load testing, volum testing, compatibility testing, and security testing.
 
 ### 1.1.5 Risks detected
