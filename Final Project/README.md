@@ -14,7 +14,7 @@ JIRA, Zephyr Squad, Postman, MySQL Workbench.
 # Functional specifications
 The following Stories have been created in JIRA and they describe the functional specifications of the PIM module, for which the final project was performed :
 
-
+[PIM_module_stories.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_stories.pdf)
 
 # 1 Testing section
 ## 1.1 Test Planning
@@ -46,7 +46,7 @@ The plan identifies the items to be tested, the features to be tested, the types
 - Regression testing must be performed on the PIM Module
 
 ### 1.1.4 Test scope
-**Tests in scope:** All the feature of PIM module which were defined in software requirement specifications need to be tested: functional testing, GUI testing and API testing. 
+**Tests in scope:** All the feature of PIM module which were defined in software requirement specifications need to be tested: functional testing, GUI testing and API testing.  
 **Tests not in scope:** integration testing of the PIM module with other modules, stress testing, load testing, volum testing, compatibility testing, and security testing.
 
 ### 1.1.5 Risks detected
@@ -89,8 +89,7 @@ equivalence partitioning, boundary value analysis and use case testing.
 
 ![test cases](https://user-images.githubusercontent.com/109798595/181040122-2f7255ce-5c37-4020-afda-870c46c2a7d6.jpg)
 
-
-The test cases with steps can be viewed here: test_cases.pdf
+The test cases with steps can be viewed here: [PIM_module_test_cases.ods](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_test_cases.ods)
 
 For the PIM Module API, the following checklist was generated: ????
 
@@ -105,18 +104,18 @@ The following elements are needed to be ready before the test execution phase be
 - Authorization token was created for accessing the API
 
 ### 1.6 Test Execution
-- Test cases are executed on the created test Cycle summary: cycle_summary_execution.pdf
-- Bugs have been created based on the failed tests, and following exploratory testing. The complete bug reports can be found here: created_bugs.pdf
+- Test cases are executed on the created test Cycle summary: [PIM_Module_CycleSummary_Execution.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_CycleSummary_Execution.xlsx)
+- Bugs have been created based on the failed tests, and following exploratory testing. The complete bug reports can be found here: [PIM_Module_bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_bugs.pdf)
 
 - Values separated by another characters than commas
 - Show US Tax Exemptions menu was not added
-- Accepted as photograph another file extension than jpg, png, gif
+- Accepted as photograph another file extension than jpg., png., gif.
 - Missing asterisk next to required field
 - Missing Add/Delete/Edit buttons
 - Missing specification for supported file type
 - Inactive ‘Performance’ tab
 
-- API tests are executed based on the checklist ????. The collection used can be found here: 
+- API tests are executed based on the checklist ????. The collection used can be found here: [Collection of requests created for PIM Module API](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/orangeHRMrestAPI.postman_collection.json)
 
 - Regression testing is needed after the bugs are fixed.
 
@@ -131,5 +130,5 @@ The following elements are needed to be ready before the test execution phase be
 
 # 2 SQL section
 
-Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications. Performed different queries inside the sql file :
+Created a database named 'orangeHrmPIM' and 3 tables named 'employeelist', 'supervisors' and 'reportingmethod' with all the columns needed to save data per specifications. Performed different queries inside the sql file : [OrangeHRM PIM Module.sql]()
 
