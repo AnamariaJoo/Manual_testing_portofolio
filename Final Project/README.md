@@ -66,18 +66,13 @@ The following status report was generated on 1st of July 2022:
 ### 1.3 Test Analysis
 The testing process will be executed based on the above requirements for the PIM module. The following test conditions were found:
 
-- Verify that one or all optional fields can be added/removed
-- Enter data for all available fields and check that a custom field is added
-- Enter data only for mandatory fields and check that a custom field is added
+- Verify that optional and custom fields can be added/deleted/edited
 - Verify all validation constraints for the fields
-- Verify that a custom field can be deleted
 - Verify that user can cancel action when edit a custom field
 - Verify that the Sample CSV file can be downloaded and ensure that a hand icon is displayed over the Download link
 - Check all validation contraints to import data from a CSV file
 - Verify that multiple entries of reporting methods can be deleted at the same time
 - Verify that a termination reason can added/deleted or edited
-- Ensure that an asterisk is displayed next to the mandatory fields
-- Verify that user can Copy and Paste text into the textboxes
 - Verify that the checkboxes, radio buttons and drop-down lists are working correctly
 - Verify that the dates are in the correct format and ensure that an expiration date earlier than an issue date cannot be selected
 
@@ -91,7 +86,7 @@ equivalence partitioning, boundary value analysis and use case testing.
 
 The test cases with steps can be viewed here: [PIM_module_test_cases.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_test_cases.xlsx)
 
-For the PIM Module API, the following checklist was generated: ????
+For the PIM Module API, the following checklist was generated: [API_test_checklist.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/API_test_checklist.xlsx)
 
 ### 1.5 Test Implementation
 The following elements are needed to be ready before the test execution phase begins:
@@ -115,7 +110,7 @@ The following elements are needed to be ready before the test execution phase be
   - Missing specification for supported file type
   - Inactive ‘Performance’ tab
 
-- API tests are executed based on the checklist ????. The collection used can be found here: [Collection of requests created for PIM Module API](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/orangeHRMrestAPI.postman_collection.json)
+- API tests are executed based on the checklist. The collection used can be found here: [Collection of requests created for PIM Module API](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/orangeHRMrestAPI.postman_collection.json)
 
 - Regression testing is needed after the bugs are fixed.
 
