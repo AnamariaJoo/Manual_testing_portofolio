@@ -60,7 +60,8 @@ The entry criterias defined in the Test Planning phase have been achieved and th
 Various periodic reports have been generated to reflect the current status of the testing process, so that action can be taken in case of major issues.
 The following status report was generated on 1st of July 2022:
 
-![monitoring   control](https://user-images.githubusercontent.com/109798595/181042574-fee63079-f874-47d8-881a-a7faa1d16756.jpg)
+
+![monitoring   control2](https://user-images.githubusercontent.com/109798595/181908697-f20948a9-d4f4-4554-9b2d-ebdd917f7dc5.jpg)
 
 
 ### 1.3 Test Analysis
@@ -82,7 +83,7 @@ equivalence partitioning, boundary value analysis and use case testing.
 
 **Test cases:** 
 
-![test cases](https://user-images.githubusercontent.com/109798595/181775988-33c44813-c66f-4429-9780-83de6e761dc0.jpg)
+![test cases1](https://user-images.githubusercontent.com/109798595/181908589-30493e01-6eee-4703-b78d-c117300cf7e5.jpg)
 
 The test cases with steps can be viewed here: [PIM_module_test_cases.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_test_cases.xlsx)
 
