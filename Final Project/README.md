@@ -100,7 +100,7 @@ The following elements are needed to be ready before the test execution phase be
 
 ### 1.6 Test Execution
 - Test cases are executed on the created test Cycle summary: [PIM_Module_CycleSummary_Execution.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_CycleSummary_Execution.xlsx)
-- Bugs have been created based on the failed tests, and following exploratory testing. The complete bug reports can be found here: [PIM_Module_bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_bugs.pdf)
+- Bugs have been created based on the failed tests, and exploratory testing. The complete bug reports can be found here: [PIM_Module_bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_bugs.pdf)
 
   - Values separated by another characters than commas
   - Show US Tax Exemptions menu was not added
@@ -119,7 +119,7 @@ The following elements are needed to be ready before the test execution phase be
 - The traceability matrix was generated and can be found here: [Traceability_Matrix.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/Traceability_Matrix.xlsx)
 - Test execution chart was generated, the final report shows that a number of 3 tests have failed of a total of 30 tests.
 - A number of 30 test cases were planned for execution and all of them were executed.
-- A number of 7 bugs were found (including the ones found following exploratory testing), from which the priority is : 2 high, 2 medium and 3 low.
+- A number of 7 bugs were found (including the ones found through exploratory testing), from which the priority is : 2 high, 2 medium and 3 low.
 
 ![PIM_Module_Test execution chart](https://user-images.githubusercontent.com/109798595/181763111-5d956d65-168d-43a5-9ee2-71959a58e0af.jpg)
 
