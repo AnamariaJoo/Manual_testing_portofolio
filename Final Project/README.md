@@ -99,7 +99,7 @@ The following elements are needed to be ready before the test execution phase be
 
 ### 1.6 Test Execution
 - Test cases are executed on the created test Cycle summary: [PIM_Module_CycleSummary_Execution.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_CycleSummary_Execution.xlsx)
-- Bugs have been created based on the failed tests, and exploratory testing. The complete bug reports can be found here: [PIM_Module_bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_bugs.pdf)
+- Bugs have been created based on the failed tests, and exploratory testing. The complete bug reports can be found here: [PIM_module_Bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_Bugs.pdf)
 
   - Values separated by other characters than commas
   - Show US Tax Exemptions menu was not added
