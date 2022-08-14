@@ -14,7 +14,7 @@ JIRA, Zephyr Squad, Postman, MySQL Workbench.
 # Functional specifications
 The following Stories have been created in JIRA and they describe the functional specifications of the PIM module, for which the final project was performed :
 
-[PIM_module_stories.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_stories.pdf)
+[PIM_module_Stories.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_module_Stories.pdf)
 
 # 1 Testing section
 ## 1.1 Test Planning
@@ -33,7 +33,6 @@ The plan identifies the items to be tested, the features to be tested, the types
 
 - The necessary roles for the project are assigned and the persons are allocated
 - The functional specifications are defined
-- The test environment is stable and the test data is in the database
 - Initial project risks were detected and mitigated 
 
 ### 1.1.3 Exit criteria defined
@@ -43,18 +42,17 @@ The plan identifies the items to be tested, the features to be tested, the types
 - The number of unresolved bugs is insignificant or they have low priority
 - All resolved bugs have been re-tested and approved
 - Deadline was reached
-- Regression testing must be performed on the PIM Module
 
 ### 1.1.4 Test scope
-**Tests in scope:** All the feature of PIM module which were defined in software requirement specifications need to be tested: functional testing, GUI testing and API testing.  
-**Tests not in scope:** integration testing of the PIM module with other modules, stress testing, load testing, volum testing, compatibility testing, and security testing.
+**Tests in scope:** All the features of PIM module which were defined in software requirement specifications need to be tested: functional testing, compatibility testing, GUI testing and API testing.  
+**Tests not in scope:** integration testing of the PIM module with other modules, stress testing, load testing, volum testing and security testing.
 
 ### 1.1.5 Risks detected
 **Project risks:** lack of experience and resources of the QA team, unclear software requirement specifications, short deadline of Zephyr Squad trial, unavailability of the test environment.  
-**Product risks:** the software may contains major defects that haven't been detected.
+**Product risks:**  the software may contains major defects that haven't been detected because of the relative inexperience of the QA team and the short deadline.
 
 ### 1.1.6 Evaluating entry criteria
-The entry criterias defined in the Test Planning phase have been achieved and the test process can continue.
+The entry criteria defined in the Test Planning phase have been achieved and the test process can continue.
 
 ### 1.2 Test Monitoring and Control
 Various periodic reports have been generated to reflect the current status of the testing process, so that action can be taken in case of major issues.
@@ -103,7 +101,7 @@ The following elements are needed to be ready before the test execution phase be
 - Test cases are executed on the created test Cycle summary: [PIM_Module_CycleSummary_Execution.xlsx](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_CycleSummary_Execution.xlsx)
 - Bugs have been created based on the failed tests, and exploratory testing. The complete bug reports can be found here: [PIM_Module_bugs.pdf](https://github.com/AnamariaJoo/Manual_testing_portofolio/blob/main/Final%20Project/PIM_Module_bugs.pdf)
 
-  - Values separated by another characters than commas
+  - Values separated by other characters than commas
   - Show US Tax Exemptions menu was not added
   - Accepted as photograph another file extension than jpg., png., gif.
   - Missing asterisk next to required field
