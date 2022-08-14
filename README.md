@@ -3,7 +3,7 @@
 ## About me
 
 My name is Anamaria Joo. I have started to take an interest in the software testing area, reason why I have attended a manual testing course.   
-My goal is to develop testing knowledge and technical skills. On this site I would like to share all the experience I gained.
+My goal is to develop testing knowledge and technical skills. On this site, I would like to share all the experience I gained.
 
 ## Skills
 You can find examples of the described skills in the Examples of my work section.
